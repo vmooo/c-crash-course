@@ -29,3 +29,13 @@ Next are the problem statements. The problems are grouped into thematic modules.
    - Toggle bit N. 
    - Check if bit N is set.
 6. Find Most Significant Bit: Write a function that finds the position of the highest set bit (MSB).
+
+## Module 3: Macros and the Preprocessor (Pitfalls)
+
+1. The MAX Pitfall: Write a macro `#define MAX(a,b) ((a) > (b) ? (a) : (b))`. Explain in comments why omitting parentheses causes breakage and why double evaluation of arguments is problematic. Write a test case that breaks a naive implementation of this macro. 
+2. Array Size: Write a macro `#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))`. Test whether it works for both arrays and pointers (explain the difference in comments). 
+3. Logging: Write a macro `LOG(msg)` that outputs `[FILE:LINE] msg`. Use `__FILE__` and `__LINE__`. 
+4. Stringification (#) and Token Pasting (##):
+   - Write a macro `PRINT_VAR(x)` that prints `x = value`. 
+   - Write a macro `CREATE_GETTER(type, name)` that generates a function `type get_name(void)`. 
+   - Safe Macro: Write a macro `#define SAFE_FREE(ptr) do { free(ptr); ptr = NULL; } while(0)`. Explain why the `do {} while(0)` construct is necessary here.
