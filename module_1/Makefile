@@ -1,11 +1,20 @@
+.PHONY: all build clean task1 task2 task3
+
+CC = clang
+CFLAGS = -Wall -Wextra -Werror -std=c17
+
+all: build
+
+build: task1 task2 task3
+
+task1: task1.c
+	$(CC) $(CFLAGS) task1.c -o task1
+
+task2: task2.c
+	$(CC) $(CFLAGS) task2.c -o task2
+
+task3: task3.c
+	$(CC) $(CFLAGS) task3.c -o task3
+
 clean:
-		rm -rf *.o task1 task2 task3
-
-task1: clean
-		clang -Wall -Wextra -Werror -std=c17 task1.c -o task1
-
-task2: clean
-		clang -Wall -Wextra -Werror -std=c17 task2.c -o task2
-
-task3: clean
-		clang -Wall -Wextra -Werror -std=c17 task3.c -o task3
+	rm -rf *.o task1 task2 task3
