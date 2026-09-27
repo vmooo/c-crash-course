@@ -6,3 +6,6 @@ task1: clean
 
 task2: clean
 		clang -Wall -Wextra -Werror -std=c17 task2.c -o task2
+
+task3: clean
+		clang -Wall -Wextra -Werror -std=c17 task3.c -o task3
